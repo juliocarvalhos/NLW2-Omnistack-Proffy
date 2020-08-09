@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import {View, ScrollView, Text} from 'react-native';
 import { TextInput, BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { useFocusEffect } from '@react-navigation/native';
@@ -45,7 +45,7 @@ function TeacherList() {
   async function handleFiltersSubmit() {
     loadFavorites()
 
-    const response = await api.get('/classes', {
+    const response = await api.get('classes', {
       params: {
           subject,
           weekDay,
