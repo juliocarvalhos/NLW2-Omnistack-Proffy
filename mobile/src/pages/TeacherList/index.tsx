@@ -18,7 +18,7 @@ function TeacherList() {
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
   
   const [subject, Setsubject] = useState('');
-  const [weekDay, SetWeekDay] = useState('');
+  const [week_day, SetWeekDay] = useState('');
   const [time, SetTime] = useState('');
 
   function loadFavorites() {
@@ -48,7 +48,7 @@ function TeacherList() {
     const response = await api.get('classes', {
       params: {
           subject,
-          weekDay,
+          week_day,
           time,
       }
   })
@@ -85,7 +85,7 @@ function TeacherList() {
                 <Text style={styles.label}>Dia da semana</Text>
                 <TextInput 
                   style={styles.input}
-                  value={weekDay}
+                  value={week_day}
                   onChangeText={text => SetWeekDay(text)}
                   placeholder="Qual dia da semana?"
                   placeholderTextColor="#c1bccc"
